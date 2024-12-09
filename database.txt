@@ -1,0 +1,23 @@
+Table: Books
+- id (INT, Primary Key): Unique identifier for each book.
+- title (VARCHAR): Name of the book.
+- author (VARCHAR): Author of the book.
+- price (DECIMAL): Price of the book.
+- description (TEXT): Brief description of the book.
+- image (VARCHAR): Filename of the book's image (for static content).
+
+Relationships:
+- None currently as each book entry is independent.
+
+Table: Users
+- id (INT, Primary Key): Unique identifier for each user.
+- username (VARCHAR): User’s chosen name.
+- password (VARCHAR): Hashed password.
+- email (VARCHAR): User’s email.
+
+Table: Reviews
+- id (INT, Primary Key): Unique identifier for each review.
+- book_id (INT, Foreign Key): Links review to a book.
+- user_id (INT, Foreign Key): Links review to a user.
+- rating (INT): Star rating (1-5).
+- comment (TEXT): User’s review text.

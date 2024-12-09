@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Events{% endblock %}
+
+{% block content %}
+    <div class="events-container">
+        <!-- First Event -->
+        <div class="event-item">
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='NTWRIGHT.jpg') }}" alt="NT Wright Event" class="event-img">
+            </div>
+            <div class="text-container">
+                <h3>NT Wright Book Signing</h3>
+                <p>Next Friday. Get to meet a world-renowned Bible scholar.</p>
+            </div>
+        </div>
+
+        <!-- Second Event -->
+        <div class="event-item">
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='LiconaEhrman.jpg') }}" alt="Licona vs Ehrman Debate" class="event-img">
+            </div>
+            <div class="text-container">
+                <h3>Debate: Michael Licona vs Bart Ehrman</h3>
+                <p>On March 3rd, 2025. Don’t miss this exciting debate between two top scholars!</p>
+            </div>
+        </div>
+
+        <!-- Third Event -->
+        <div class="event-item">
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='BookClub.png') }}" alt="Book Club Meeting" class="event-img">
+            </div>
+            <div class="text-container">
+                <h3>Book Club Meeting</h3>
+                <p>This Wednesday. Open floor for both debate and questions.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

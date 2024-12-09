@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}About Tucker Balch{% endblock %}
+
+{% block content %}
+    <div class="about-container">
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='tuckerbalch.jpg') }}" alt="Tucker Balch" class="profile-img">
+        </div>
+        <div class="text-container">
+            <p>My name is Tucker Balch, and I am a Christian student at Georgia College and State University. Throughout my life, I have always sought the truth and meaning in the world around me, and I’ve learned that the best way to achieve this is by exploring diverse viewpoints. My Christian faith has had a profoundly positive influence on my life, but I also recognize that others hold different opinions and worldviews, with arguments just as strong and compelling as those of Christian thinkers like C.S. Lewis. You never truly know something until you can defend your beliefs, so it is important to understand and respect opposing perspectives. The goal of this bookstore is to remain open-minded and provide both believers and nonbelievers with the resources to come to their own conclusions. I hope and encourage you all to explore the expert opinions presented here, even if they challenge your prior beliefs.</p>
+        </div>
+    </div>
+{% endblock %}

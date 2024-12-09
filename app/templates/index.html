@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Balch's Apologetics & Inquiry Store{% endblock %}
+
+{% block content %}
+    <div class="content-container">
+        <h1>Welcome to Balch's Apologetics & Inquiry Store</h1>
+        <p>Explore our wide selection of books that delve into Bible scholarship, worldviews supporting and opposing Christianity, and arguments for and against the Christian faith.</p>
+        <div>
+        <h3>NT Wright's Simply Jesus</h3>
+        <img src="{{ url_for('static', filename='SimplyJesus.jpg') }}" alt="Simply Jesus" width="300">
+        <p>This book gives a very edifying argument for the resurrection of Jesus from an acclaimed Bible Scholar.</p>
+    </div>
+    <div>
+        <h3>Bart Ehrman's Forged</h3>
+        <img src="{{ url_for('static', filename='Forged.jpg') }}" alt="Forged" width="300">
+        <p>This book gives a different approach to the bible, speaking more critically of it, and questioning the New Testament's traditional authors.</p>
+
+    </div>
+{% endblock %}

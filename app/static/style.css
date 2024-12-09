@@ -1,0 +1,51 @@
+/* Set the body background color and text color */
+body {
+    background-color: #e3f2fd; /* Light blue background */
+    color: #3a3a3a;  /* Set text color to dark gray */
+    font-family: 'Arial', sans-serif;  /* Set a clean font */
+}
+
+/* Center the text in the body */
+h1, h2, h3, p, .card-title, .card-text, .nav-link {
+    text-align: center;
+}
+
+/* Center images within cards */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Add additional styling for buttons and forms */
+.btn {
+    margin: 5px;
+}
+
+/* Style for card */
+.card {
+    text-align: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+
+/* Style for card-body */
+.card-body {
+    padding: 10px;
+}
+
+/* Specific style for links in the navigation */
+.navbar-nav .nav-link {
+    color: #003366 !important;  /* Dark blue color for nav links */
+}
+
+.navbar {
+    background-color: #003366;
+    padding: 15px;
+}
+

@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="text-center">Catalog</h1>
+
+    <!-- Dropdown for Filtering by Book -->
+    <form method="GET" action="{{ url_for('books.catalog') }}">
+        <div class="form-group">
+            <label for="book_filter">Filter by Book:</label>
+            <select class="form-control" id="book_filter" name="book_id">
+                <option value="">Select a Book</option>
+                {% for book in books %}
+                    <option value="{{ book['books_id'] }}" {% if request.args.get('book_id') == book['books_id'] %}selected{% endif %}>{{ book['title'] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Filter</button>
+    </form>
+
+    <!-- Add Book Button -->
+    <a href="{{ url_for('books.add_book') }}" class="btn btn-primary mb-4">Add New Book</a>
+
+    <div class="container">
+        <div class="row">
+            {% for book in books %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Book Title -->
+                            <h5 class="card-title text-center">{{ book['title'] }}</h5>
+
+                            <!-- Book Author -->
+                            <p class="card-text text-center">{{ book['author'] }}</p>
+
+                            <!-- Book Price -->
+                            <p class="card-text text-center">${{ book['price'] }}</p>
+
+                            <!-- Book Description -->
+                            <p class="card-text">{{ book['description'] }}</p>
+
+                            <!-- Show Reviews -->
+                            <h6>Reviews:</h6>
+                            {% if book['avg_rating'] is not none %}
+                                <p>Average Rating: {{ book['avg_rating'] | round(1) }}/5</p>
+                            {% else %}
+                                <p>No reviews yet.</p>
+                            {% endif %}
+
+                            <!-- View Details -->
+                            <a href="{{ url_for('books.book_details', book_id=book['books_id']) }}" class="btn btn-primary">View Details</a>
+
+                            <!-- Edit Book -->
+                            <a href="{{ url_for('books.edit_book', book_id=book['books_id']) }}" class="btn btn-sm btn-warning mt-2">Edit</a>
+
+                            <!-- Delete Book -->
+                            <form action="{{ url_for('books.delete_book', book_id=book['books_id']) }}" method="POST">
+                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
