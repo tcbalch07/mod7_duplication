@@ -1,23 +1,17 @@
 Table: Books
-- id (INT, Primary Key): Unique identifier for each book.
-- title (VARCHAR): Name of the book.
+- books_id (INT, Primary Key): Unique identifier for each book.
+- title (VARCHAR): Title of the book.
 - author (VARCHAR): Author of the book.
-- price (DECIMAL): Price of the book.
-- description (TEXT): Brief description of the book.
-- image (VARCHAR): Filename of the book's image (for static content).
-
-Relationships:
-- None currently as each book entry is independent.
-
-Table: Users
-- id (INT, Primary Key): Unique identifier for each user.
-- username (VARCHAR): User’s chosen name.
-- password (VARCHAR): Hashed password.
-- email (VARCHAR): User’s email.
+- price (DECIMAL(10, 2)): Price of the book.
+- description (TEXT): Description of the book.
+- created_at (TIMESTAMP): The timestamp when the book was added.
 
 Table: Reviews
-- id (INT, Primary Key): Unique identifier for each review.
-- book_id (INT, Foreign Key): Links review to a book.
-- user_id (INT, Foreign Key): Links review to a user.
-- rating (INT): Star rating (1-5).
-- comment (TEXT): User’s review text.
+- review_id (INT, Primary Key): Unique identifier for each review.
+- book_id (INT, Foreign Key): References books_id in the books table.
+- review_text (TEXT): The content of the review.
+- rating (INT): Rating from 1 to 5.
+- created_at (TIMESTAMP): The timestamp when the review was added.
+
+Relationships:
+- Reviews table has a foreign key constraint on book_id that references the books table. ON DELETE CASCADE ensures that when a book is deleted, its related reviews are also deleted.
